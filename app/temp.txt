@@ -1,0 +1,2 @@
+
+                 transform: translate(<%= ((@sectionCount / 2) - index) / 3.0 %>vw) scaleX(<%= 1.0 - ((index - (@sectionCount / 2)).abs / 10.0) %>); 

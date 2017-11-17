@@ -1,0 +1,8 @@
+<h1>Home</h1>
+<div class="terminal">
+    <% @lines.each do |line| %>
+        <div class="line">
+            <% line.each_with_index do |section, index| %><div class="section" style='<%= style(index) %>'><%= section %></div><% end %>
+        </div>
+    <% end %>
+</div>
