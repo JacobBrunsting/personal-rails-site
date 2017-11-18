@@ -1,8 +1,13 @@
+<div class="home"/>
 <h1>Home</h1>
+<div class="computer">
 <div class="terminal">
-    <% @lines.each do |line| %>
-        <div class="line">
-            <% line.each_with_index do |section, index| %><div class="section" style='<%= style(index) %>'><%= section %></div><% end %>
+    <% @splitLines.each_with_index do |line, lineNum| %>
+        <div class="line <%= line.isListItem ? "list-line" : "" %>">
+            <% line.sections.each_with_index do |section, sectionNum| %><div class="section" style='<%= style(lineNum, sectionNum) %>'><%= section %></div><% end %>
         </div>
     <% end %>
+    <div class="overlay" />
+</div>
+</div>
 </div>
