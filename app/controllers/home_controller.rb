@@ -36,7 +36,6 @@ class HomeController < ApplicationController
 
     def show
         lines = [
-            Line.new("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", false),
             Line.new("Works at some place with some stuff and things", false),
             Line.new("> Jacob Brunsting", true),
             Line.new("> Hosssme", true), 
@@ -46,6 +45,7 @@ class HomeController < ApplicationController
             Line.new("Works at some with stuff and things", false),
             Line.new("Also doese at some place with some stuff and things", false),
             Line.new("Works at some place with some stuff and things", false),
+            Line.new(" ", false),
         ]
         @splitLines = Array.new
         lines.each do |line|
@@ -73,11 +73,10 @@ class HomeController < ApplicationController
 
         scaleX = 1
         if distFromCenterX.abs > 8
-            scaleX = 1.0 - ((distFromCenterX.abs * distFromCenterX.abs - 8.0) / 3000.0)
+            scaleX = 1.0 - ((distFromCenterX.abs ** 2 - 8.0) / 2500.0)
         end
-        scaleX *= 1.05
-        translateY = distFromCenterX.abs * distFromCenterX.abs * distFromCenterY * 0.0002
-        rotate = translateY * 5
+        translateY = (distFromCenterX.abs / 70.0) ** 2.5 * distFromCenterY
+        rotate = translateY * 7.0
         if distFromCenterX > 0
             rotate *= -1
         end
@@ -90,5 +89,3 @@ class HomeController < ApplicationController
         transformSection + "; " + widthSection
     end
 end
-
-# go to code pen bYYXyQ, look for 'scanlines' ::before
