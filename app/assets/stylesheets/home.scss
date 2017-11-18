@@ -1,9 +1,19 @@
 $green-light: #7f0;
 $green-dark: #3d0;
 $green-ultradark: #080;
+$green-shadow: #0a150a;
+$screen-off: #0a180a;
 $dark: #111;
-$grey: #333;
+$grey: #252525;
 $terminal-width: 55vw;
+
+html {
+    background-color: $grey;
+}
+
+body {
+    margin: 0;
+}
 
 .home {
     text-align: center;
@@ -12,7 +22,6 @@ $terminal-width: 55vw;
 .computer {
     position: relative;
     z-index: 1;
-    background-color: $grey;
     padding: 8%;
 }
 
@@ -31,16 +40,18 @@ $terminal-width: 55vw;
 }
 
 .shadow {
+    transition: background 0.2s ease;
     content: " ";
+    background: $dark;
     display: block;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    border-radius: 3vw;
+    border-radius: 2vw;
     z-index: -3;
-    box-shadow: 1vw 0 5vw 2vw $dark, -1vw 0 5vw 2vw $dark;
+    box-shadow: 2vw 0 7vw 2vw $green-shadow, -2vw 0 7vw 2vw $green-shadow;
 }
 
 .overlay {
@@ -63,6 +74,7 @@ $terminal-width: 55vw;
 }
 
 .line {
+    transition: opacity 0.2s ease;
     font-family: monospace;
     font-weight: bold;
     font-size: 2vw;
@@ -88,8 +100,9 @@ $terminal-width: 55vw;
 }
 
 .terminal:before {
+    transition: box-shadow 0.2s ease;
     z-index: -1;
-    content: "";
+    content: " ";
     position: absolute;
     top: -1.2vw;
     height: 4vw;
@@ -99,10 +112,11 @@ $terminal-width: 55vw;
     background: linear-gradient(darken($green-ultradark, 19) 50%, darken($green-ultradark, 14) 50%);
     background-size: 100% 0.2vw, 0.2vw 100%;
     background-position-y: -0.1vw;
-    box-shadow: 0 -1vw 4vw 2vw $dark;
+    box-shadow: 0 -1.5vw 4vw 2vw $green-shadow;
 }
 
 .terminal:after {
+    transition: box-shadow 0.2s ease;
     z-index: -1;
     content: "";
     position: absolute;
@@ -114,5 +128,51 @@ $terminal-width: 55vw;
     background: linear-gradient(darken($green-ultradark, 19) 50%, darken($green-ultradark, 14) 50%);
     background-size: 100% 0.2vw, 0.2vw 100%;
     background-position-y: 0.1vw;
-    box-shadow: 0 1vw 4vw 2vw $dark;
+    box-shadow: 0 1.5vw 4vw 2vw $green-shadow;
+}
+
+#power-button {
+    display: none;
+}
+
+#power-button-label {
+    position: absolute;
+    top: 4vw;
+    right: 4vw;
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#power-button:checked + #power-button-label {
+    background-color: red;
+}
+
+#power-button:checked + #power-button-label + .terminal {
+    box-shadow: none;
+    background: $screen-off;
+
+    .line {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .overlay {
+        opacity: 0;
+    }
+
+    .shadow {
+        box-shadow: 2vw 0 7vw 2vw $dark, -2vw 0 7vw 2vw $dark;
+    }
+}
+
+#power-button:checked + #power-button-label + .terminal:before {
+    background: $screen-off;
+    box-shadow: 0 -1.5vw 4vw 2vw $dark;
+}
+
+#power-button:checked + #power-button-label + .terminal:after {
+    background: $screen-off;
+    box-shadow: 0 1.5vw 4vw 2vw $dark;
 }
