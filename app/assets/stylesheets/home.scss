@@ -1,5 +1,4 @@
 $green: #7f0;
-$green-dark: #3d0;
 $green-ultradark: #080;
 $green-shadow: #0a150a;
 $screen-off: #0a180a;
@@ -50,10 +49,10 @@ body {
     padding-bottom: 1vw;
     padding-left: 3vw;
     padding-right: 3vw;
-    background-color: $dark;
-    color: $green;
+    background-color: darken($green, 46);
+    color: darken($green, 20);
     border-radius: 3vw;
-    box-shadow: inset 1vw 0px 8vw 0vw transparentize($green-dark, 0.8);
+    box-shadow: inset 1vw 0px 8vw 0vw transparentize(darken($green, 4), 0.8);
 }
 
 .shadow {
@@ -79,7 +78,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparentize(#000, 1) 50%, transparentize(darken($green-ultradark, 10), 0.4) 50%);
+    background: linear-gradient(transparentize(#000, 1) 50%, transparentize(darken($green, 35), 0.4) 50%);
     z-index: 2;
     background-size: 100% 0.2vw, 0.2vw 100%;
     pointer-events: none;
@@ -125,7 +124,7 @@ body {
     left: 2vw;
     right: 2vw;
     border-radius: 40%;
-    background: linear-gradient(darken($green-ultradark, 19) 50%, darken($green-ultradark, 14) 50%);
+    background: linear-gradient(darken($green, 42) 50%, darken($green, 37) 50%);
     background-size: 100% 0.2vw, 0.2vw 100%;
     background-position-y: -0.1vw;
     box-shadow: 0 -1.5vw 4vw 2vw $green-shadow;
@@ -140,7 +139,7 @@ body {
     left: 2vw;
     right: 2vw;
     border-radius: 40%;
-    background: linear-gradient(darken($green-ultradark, 19) 50%, darken($green-ultradark, 14) 50%);
+    background: linear-gradient(darken($green, 42) 50%, darken($green, 38) 50%);
     background-size: 100% 0.2vw, 0.2vw 100%;
     background-position-y: 0.1vw;
     box-shadow: 0 1.5vw 4vw 2vw $green-shadow;
@@ -164,7 +163,7 @@ body {
 
 #power-button:checked + #power-button-label {
     background-color: $button-color;
-    box-shadow: inset 0 0 0.5vw 0 $dark, 0 0 1.5vw 0 $dark;
+    box-shadow: inset 0 0 0.5vw 0 $dark, 0 0 1.5vw 0 darken($computer-color, 20);
 
     + .monitor-frame {
         > .terminal {
