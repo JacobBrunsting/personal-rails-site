@@ -21,7 +21,10 @@ body {
 }
 
 .computer {
+    display: flex;
     position: relative;
+    margin: 5vw;
+    justify-content: center;
 }
 
 .monitor-frame {
@@ -32,9 +35,7 @@ body {
     position: relative;
     z-index: 1;
     padding: 5%;
-    margin: auto;
-    margin-top: 5vw;
-    margin-bottom: 5vw;
+    margin-bottom: auto;
     border-color: darken($computer-color, 15);
     border-width: 0.2vw;
     border-style: solid;
@@ -145,25 +146,72 @@ body {
     box-shadow: 0 1.5vw 4vw 2vw $green-shadow;
 }
 
+#name-logo {
+    flex-grow: 1;
+    box-shadow: inset 0 0 1vw 0 darken($computer-color, 30);
+    text-shadow: darken($computer-color, 30) 0 0 1vw;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 17vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    background-color: darken($computer-color, 15);
+    border-radius: 1vw;
+    color: $computer-color;
+
+    h1 {
+        margin: 0;
+        font-size: 4vw;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 2.5vw;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        a {
+            color: $computer-color;
+        }
+        font-weight: bold;
+        font-size: 1.4vw;
+        margin-top: 1vw;
+    }
+}
+
+#right-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+}
+
 #power-button {
     display: none;
 }
 
 #power-button-label {
     transition: box-shadow 0.2s ease;
-    position: absolute;
-    bottom: 6vw;
-    right: 5vw;
     height: 4vw;
     width: 4vw;
     border-radius: 50%;
     background-color: $button-color;
     box-shadow: inset 0 0 1vw 0 $dark;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#power-button:checked + #power-button-label {
-    background-color: $button-color;
-    box-shadow: inset 0 0 0.5vw 0 $dark, 0 0 1.5vw 0 darken($computer-color, 20);
+#power-button:checked {
+
+    ~ #right-column > #power-button-label {
+        background-color: $button-color;
+        box-shadow: inset 0 0 0.5vw 0 $dark, 0 0 1.5vw 0 darken($computer-color, 20);
+    }
 
     + .monitor-frame {
         > .terminal {

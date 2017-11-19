@@ -1,7 +1,6 @@
 <div class="home"/>
     <div class="computer">
         <input type="checkbox" id="power-button" unchecked>
-        <label for="power-button" id="power-button-label"></label>
         <div class="monitor-frame">
             <div class="terminal">
                 <% @splitLines.each_with_index do |line, lineNum| %>
@@ -12,6 +11,19 @@
                 <div class="overlay"></div>
                 <div class="shadow"></div>
             </div>
+        </div>
+        <div id="right-column">
+            <div id="name-logo">
+                <h1>Jacob</h1>
+                <h3>Brunsting</h1>
+                <ul>
+                    <li>Computer Science</li>
+                    <li>University of Waterloo</li>
+                    <li><a href="https://www.linkedin.com/in/jacob-brunsting-021a25126/">LinkedIn</a></li>
+                    <li><a href="https://github.com/JacobBrunsting">Github</a></li>
+                </ul>
+            </div>
+            <label for="power-button" id="power-button-label"></label>
         </div>
     </div>
 </div>
