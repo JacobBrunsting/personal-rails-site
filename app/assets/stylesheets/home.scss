@@ -5,7 +5,6 @@ $screen-off: #0a180a;
 $dark: #111;
 $grey: #282828;
 $computer-color: #96916b;
-$button-color: #ccc;
 $terminal-width: 55vw;
 
 html {
@@ -40,6 +39,8 @@ body {
 }
 
 .monitor-frame {
+    flex-grow: 0;
+    flex-shrink: 0;
     overflow: hidden;
     background-color: $grey;
     display: inline-block;
@@ -210,8 +211,8 @@ body {
     height: 4vw;
     width: 4vw;
     border-radius: 50%;
-    background-color: $button-color;
-    box-shadow: inset 0 0 1vw 0 $dark;
+    background-color: $computer-color;
+    box-shadow: inset 0 0.1vw 1.5vw 0 $dark;
     margin-top: 2vw;
     margin-bottom: 2vw;
     margin-left: auto;
@@ -221,8 +222,7 @@ body {
 #power-button:checked {
 
     ~ #right-column > #power-button-label {
-        background-color: $button-color;
-        box-shadow: inset 0 0 0.5vw 0 $dark, 0 0 1.5vw 0 darken($computer-color, 20);
+        box-shadow: inset 0 0 0.3vw 0 $dark;
     }
 
     + .monitor-frame {
