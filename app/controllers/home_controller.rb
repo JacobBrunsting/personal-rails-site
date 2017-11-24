@@ -48,29 +48,55 @@ class HomeController < ApplicationController
         case params[:page]
         when "about"
             lines = [
-                Line.new("About me"),
-                Line.new("> Home", true, "/"),
-                Line.new("> Hosssme", true, "homle"), 
-                Line.new("> about_me", true),
-                Line.new("> Projects", true),
-                Line.new("Workse place with stuff and things"),
-                Line.new("Also doese at some place with some stuff and things"),
-                Line.new("Works at some place with some stuff and things"),
-                Line.new("Works at some place with some stuff and things"),
-                Line.new("Works at some place with some stuff and things"),
+                Line.new("About Me"),
+                Line.new("> Computer Science student at the University of Waterloo"),
+                Line.new("> Interned at several companies, developing mobile apps,"),
+                Line.new("  websites, and distributed systems"),
+                Line.new("> Interested in full-stack and backend positions"),
+                Line.new("> Most experienced in Go, Java, and Javascript"),
+                Line.new("  (Node.js/React)"),
+                Line.new("> Some experience with Haskell, Ruby on Rails, C++, Python"),
+                Line.new(""),
+                Line.new("< Back", true, "/home"),
+            ]
+        when "work"
+            lines = [
+                Line.new("Work Experience"),
+                Line.new("Yahoo (2017)"),
+                Line.new("> Worked on a small team to create a new system for tracking"),
+                Line.new("usage of internal services (Go, Python)"),
+                Line.new("Tribalscale (2017)"),
+                Line.new("> Pair programmed, working on a major Android app (Java)"),
+                Line.new("> Created the next version of TribalScale.com (Node.js/React)"),
+                Line.new("WeMesh (2016)"),
+                Line.new("> Developed the Rave Android app (Java)"), 
+                Line.new("< Back", true, "/home"),
+            ]
+        when "projects"
+            lines = [
+                Line.new("Projects"),
+                Line.new("> About me", true, "/about"),
+                Line.new("> Work experience", true, "/work"), 
+                Line.new("> Projects", true, "/projects"),
+                Line.new(""),
+                Line.new(""),
+                Line.new(""),
+                Line.new(""),
+                Line.new(""),
+                Line.new("< Back", true, "/home"),
             ]
         else 
             lines = [
                 Line.new("Welcome to my personal website!"),
-                Line.new("> About", true, "/about"),
-                Line.new("> Hosssme", true), 
-                Line.new("> about_me", true),
-                Line.new("> Projects", true),
-                Line.new("Workse place with stuff and things"),
-                Line.new("Works at some with stuff and things"),
-                Line.new("Works at some place with some stuff and things"),
-                Line.new("Works at some place with some stuff and things"),
-                Line.new("Works at some place with some stuff and things"),
+                Line.new("> About Me", true, "/about"),
+                Line.new("> Work Experience", true, "/work"), 
+                Line.new("> Projects", true, "/projects"),
+                Line.new(""),
+                Line.new(""),
+                Line.new(""),
+                Line.new(""),
+                Line.new(""),
+                Line.new(""),
             ]
         end
         @splitLines = Array.new

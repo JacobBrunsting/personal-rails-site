@@ -18,7 +18,10 @@ body {
 .home {
     overflow: hidden;
     perspective: 100vw;
-    padding: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 2vw;
+    padding-top: 1vw;
     text-align: center;
     background-color: darken($computer-color, 40);
     position: absolute;
@@ -72,6 +75,7 @@ ul.terminal {
     list-style: none;
 
     li {
+        height: 2.5vw;
         font-weight: bold;
         font-size: 1.4vw;
         margin-top: 0vw;
