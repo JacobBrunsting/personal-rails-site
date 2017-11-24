@@ -123,6 +123,10 @@ ul.terminal {
     font-size: 2vw;
 }
 
+::selection {
+    background-color: darken($green, 30);
+}
+
 li.line {
     transition: opacity 0.2s ease;
     float: left;
