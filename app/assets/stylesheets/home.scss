@@ -8,7 +8,7 @@ $computer-color: #96916b;
 $terminal-width: 55vw;
 
 html {
-    background-color: $computer-color;
+    background-color: darken($computer-color, 40);
 }
 
 body {
@@ -16,7 +16,9 @@ body {
 }
 
 .home {
-    padding: 1vw;
+    overflow: hidden;
+    perspective: 100vw;
+    padding: 2vw;
     text-align: center;
     background-color: darken($computer-color, 40);
     position: absolute;
@@ -25,17 +27,16 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
 }
 
 .computer {
     flex-shrink: 0;
     display: flex;
     position: relative;
-    padding: 5vw;
+    padding: 3vw;
     justify-content: center;
     background-color: $computer-color;
-    border-radius: 3vw;
+    border-radius: 2vw;
 }
 
 .monitor-frame {
@@ -155,7 +156,6 @@ body {
     border-radius: 40%;
     background: linear-gradient(darken($green, 42) 50%, darken($green, 38) 50%);
     background-size: 100% 0.2vw, 0.2vw 100%;
-    background-position-y: 0.1vw;
     box-shadow: 0 1.5vw 4vw 2vw $green-shadow;
 }
 
@@ -257,8 +257,35 @@ body {
 }
 
 .footer {
-    margin-top: 1vw;
+    overflow: hidden;
+    height: 8vw;
+    background-color: darken($computer-color, 10);
+    border-radius: 2vw;
+    transform: rotateX(60deg) scale(1.05);
+    margin-top: -1vw;
+    margin-bottom: -4vw;
+    border-bottom: $computer-color 3vw solid;
+}
+
+.keyboard {
+    display: flex;
+    border-radius: 1vw;
+    position: absolute;
+    top: 2vw;
+    bottom: 2vw;
+    left: 4vw;
+    right: 4vw;
+
+    .left {
+        width: 53vw;
+        margin-right: 3vw;
+    }
+}
+
+.keyboard-section {
     flex-grow: 1;
-    background-color: $computer-color;
-    border-radius: 3vw;
+    background-size: 4.1vw 1.05vw;
+    background-color: $dark;
+    background-image: linear-gradient(to right, darken($computer-color, 10) 0.2vw, transparent 0.2vw), linear-gradient(to bottom, darken($computer-color, 10) 0.2vw, transparent 0.2vw);
+
 }
