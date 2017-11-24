@@ -2,15 +2,18 @@
     <div class="computer">
         <input type="checkbox" id="power-button" unchecked>
         <div class="monitor-frame">
-            <div class="terminal">
+            <ul class="terminal">
                 <% @splitLines.each_with_index do |line, lineNum| %>
-                    <div class="line <%= line.isListItem ? "list-line" : "" %>">
-                        <% line.sections.each_with_index do |section, sectionNum| %><div class="section" style='<%= style(lineNum, sectionNum) %>'><%= section %></div><% end %>
-                    </div>
+                    <li class="line <%= line.isListItem ? "list-line" : "" %>" >
+
+                        <% conditional_link(:show_link => line.href != "", :href => line.href) do %>
+                            <% line.sections.each_with_index do |section, sectionNum| %><div class="section" style='<%= style(lineNum, sectionNum) %>'><%= section %></div><% end %>
+                        <% end %>
+                    </li>
                 <% end %>
                 <div class="overlay"></div>
                 <div class="shadow"></div>
-            </div>
+            </ul>
         </div>
         <div id="right-column">
             <div id="name-logo">

@@ -1,7 +1,8 @@
 class Line
-    def initialize(text, isListItem)
+    def initialize(text, isListItem=false, href='')
         @text = text
         @isListItem = isListItem
+        @href = href
     end
 
     def text
@@ -11,12 +12,17 @@ class Line
     def isListItem
         @isListItem
     end
+
+    def href
+        @href
+    end
 end
 
 class SplitLine
-    def initialize(sections, isListItem)
+    def initialize(sections, isListItem, href)
         @sections = sections
         @isListItem = isListItem
+        @href = href
     end
 
     def sections
@@ -25,6 +31,10 @@ class SplitLine
 
     def isListItem
         @isListItem
+    end
+
+    def href
+        @href
     end
 end
 
@@ -35,18 +45,34 @@ class HomeController < ApplicationController
     LINE_COUNT = 10
 
     def show
-        lines = [
-            Line.new("Works at some place with some stuff and things", false),
-            Line.new("> Jacob Brunsting", true),
-            Line.new("> Hosssme", true), 
-            Line.new("> about_me", true),
-            Line.new("> Projects", true),
-            Line.new("Workse place with stuff and things", false),
-            Line.new("Works at some with stuff and things", false),
-            Line.new("Also doese at some place with some stuff and things", false),
-            Line.new("Works at some place with some stuff and things", false),
-            Line.new(" ", false),
-        ]
+        case params[:page]
+        when "about"
+            lines = [
+                Line.new("About me"),
+                Line.new("> Home", true, "/"),
+                Line.new("> Hosssme", true, "homle"), 
+                Line.new("> about_me", true),
+                Line.new("> Projects", true),
+                Line.new("Workse place with stuff and things"),
+                Line.new("Also doese at some place with some stuff and things"),
+                Line.new("Works at some place with some stuff and things"),
+                Line.new("Works at some place with some stuff and things"),
+                Line.new("Works at some place with some stuff and things"),
+            ]
+        else 
+            lines = [
+                Line.new("Welcome to my personal website!"),
+                Line.new("> About", true, "/about"),
+                Line.new("> Hosssme", true), 
+                Line.new("> about_me", true),
+                Line.new("> Projects", true),
+                Line.new("Workse place with stuff and things"),
+                Line.new("Works at some with stuff and things"),
+                Line.new("Works at some place with some stuff and things"),
+                Line.new("Works at some place with some stuff and things"),
+                Line.new("Works at some place with some stuff and things"),
+            ]
+        end
         @splitLines = Array.new
         lines.each do |line|
             splitLine = Array.new
@@ -61,7 +87,7 @@ class HomeController < ApplicationController
             if section.length > 0
                 splitLine.push(section)
             end
-            @splitLines.push(SplitLine.new(splitLine, line.isListItem))
+            @splitLines.push(SplitLine.new(splitLine, line.isListItem, line.href))
         end
         render template: "home/home"
     end

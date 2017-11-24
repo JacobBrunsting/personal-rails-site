@@ -56,7 +56,7 @@ body {
     box-shadow: 0 0 2vw 0 darken($computer-color, 15);
 }
 
-.terminal {
+ul.terminal {
     width: $terminal-width;
     display: inline-block;
     position: relative;
@@ -64,10 +64,22 @@ body {
     padding-bottom: 1vw;
     padding-left: 3vw;
     padding-right: 3vw;
+    margin: 0;
     background-color: darken($green, 46);
     color: darken($green, 20);
     border-radius: 3vw;
     box-shadow: inset 1vw 0px 8vw 0vw transparentize(darken($green, 4), 0.8);
+    list-style: none;
+
+    li {
+        font-weight: bold;
+        font-size: 1.4vw;
+        margin-top: 0vw;
+
+        a {
+            color: darken($green, 20);
+        }
+    }
 }
 
 .shadow {
@@ -102,22 +114,22 @@ body {
 
 .section {
     display: inline-block;
-}
-
-.line {
-    transition: opacity 0.2s ease;
     font-family: monospace;
     font-weight: bold;
     font-size: 2vw;
+}
+
+li.line {
+    transition: opacity 0.2s ease;
     float: left;
     clear: left;
 }
 
-.list-line:hover > .section {
+.list-line:hover .section {
     text-decoration: underline;
 }
 
-.list-line > .section:first-child {
+.list-line .section:first-child {
     visibility: hidden;
     text-decoration: none;
 }
@@ -126,7 +138,7 @@ body {
     cursor: pointer;
 }
 
-.list-line:hover > .section:first-child {
+.list-line:hover .section:first-child {
     visibility: visible;
 }
 
@@ -188,7 +200,7 @@ body {
 
     li {
         a {
-            color: $computer-color;
+            color: $computer-color !important;
         }
         font-weight: bold;
         font-size: 1.4vw;
