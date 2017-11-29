@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Allow for jacobbrunsting.ca to redirect to the rails site with masking
+  config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOW-FROM https://jacobbrunsting.ca' }
 end
