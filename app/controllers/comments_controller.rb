@@ -1,25 +1,35 @@
 class CommentsController < ApplicationController
   def index
-      @comments = Comment.all
+      @comments = ::Comment.all
   end
 
   def new
-      @comment = Comment.new
+      @comment = ::Comment.new
   end
 
   def create
-      @comment = Comment.new(comment_params)
+      @message = '...'
+      if comment_params == []
+          @message = 'Error Creating Comment'
+          return
+      end
 
-      if @comment.save
-          flash[:success] = 'Added comment!'
+      @comment = ::Comment.new(comment_params)
+
+      if @comment.author == ''
+          @message = 'Name Required'
+      elsif @comment.text == ''
+          @message = 'Content Required'
+      elsif @comment.save
+          @message = 'Added Comment'
       else
-          render 'new'
+          @message = 'Error Saving Comment'
       end
   end
 
   def show
-      @comments = Comment.all
-      @comment = Comment.new
+      @comments = ::Comment.all
+      @comment = ::Comment.new
   end
 end
 
