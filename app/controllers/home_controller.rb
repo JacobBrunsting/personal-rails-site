@@ -38,13 +38,28 @@ class SplitLine
     end
 end
 
+class Comment
+    include ActiveModel::Model
+
+    attr_accessor :author
+end
+
 class HomeController < ApplicationController
     helper_method :style
     LINE_WIDTH = 60
     SECTION_WIDTH = 1
     LINE_COUNT = 10
 
+    def new
+        @comment = Comment.new
+    end
+
+    def create
+        @comment = Comment.new(params[:comment])
+    end
+
     def show
+        @comment = Comment.new
         case params[:page]
         when "about"
             lines = [
@@ -91,7 +106,7 @@ class HomeController < ApplicationController
                 Line.new("> About Me", true, "/about"),
                 Line.new("> Work Experience", true, "/work"), 
                 Line.new("> Projects", true, "/projects"),
-                Line.new(""),
+                Line.new("> Comments", true, "/comments"),
                 Line.new(""),
                 Line.new(""),
                 Line.new(""),
@@ -115,6 +130,7 @@ class HomeController < ApplicationController
             end
             @splitLines.push(SplitLine.new(splitLine, line.isListItem, line.href))
         end
+
         render template: "home/home"
     end
 

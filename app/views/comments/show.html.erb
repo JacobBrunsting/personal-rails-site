@@ -1,0 +1,16 @@
+<div class="comments">
+    <h1>Comments</h1>
+    <%= form_for @comment do |c| %>
+        <%= c.text_field :author, :placeholder => 'Name' %>
+        <%= c.text_field :email, :placeholder => 'Email' %>
+        <%= c.text_area :text, :rows => 5, :placeholder => 'Text' %>
+        <%= submit_tag("Submit") %>
+    <% end %>
+    <ul class="list">
+        <% @comments.each_with_index do |comment| %>
+            <li>
+                <%= comment.text %>
+            </li>
+        <% end %>
+    </ul>
+</div>
