@@ -38,12 +38,6 @@ class SplitLine
     end
 end
 
-class Comment
-    include ActiveModel::Model
-
-    attr_accessor :author
-end
-
 class HomeController < ApplicationController
     helper_method :style
     LINE_WIDTH = 60
