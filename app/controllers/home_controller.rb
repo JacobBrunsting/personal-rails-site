@@ -84,14 +84,14 @@ class HomeController < ApplicationController
         when "projects"
             lines = [
                 Line.new("Projects"),
-                Line.new("> About me", true, "/about"),
-                Line.new("> Work experience", true, "/work"), 
-                Line.new("> Projects", true, "/projects"),
-                Line.new(""),
-                Line.new(""),
-                Line.new(""),
-                Line.new(""),
-                Line.new(""),
+                Line.new("> Iced Mocha", true, "https://www.iced-mocha.com"),
+                Line.new("    A website for aggregating RSS and social media feeds"), 
+                Line.new("    Written with Go, SQL, Haskell, Node.js, and React"),
+                Line.new("> Blankbook", true, "https://github.com/blankbook"),
+                Line.new("    Android app that allows you to make posts to custom groups"),
+                Line.new("    Written with Go, SQL, and Java"),
+                Line.new("> Other Projects", true, "https://github.com/jacobbrunsting"),
+                Line.new("    Several other projects including Android apps and websites"),
                 Line.new("< Back", true, "/home"),
             ]
         else 
