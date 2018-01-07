@@ -2,10 +2,10 @@
     <div id="header">
         <%= image_tag("profile.jpg", :alt => "Profile Image", :class => "profile") %>
         <h1>Jacob Brunsting</h1>
-        <a href="https://www.linkedin.com/in/jacob-brunsting-021a25126/">
+        <a target="_blank" href="https://www.linkedin.com/in/jacob-brunsting-021a25126/">
             <%= image_tag("linkedin-logo.png", :alt => "LinkedIn") %>
         </a>
-        <a href="https://github.com/JacobBrunsting">
+        <a href="https://github.com/JacobBrunsting" target="_blank">
             <%= image_tag("github-logo.png", :alt => "LinkedIn") %>
         </a>
     </div>
@@ -30,7 +30,7 @@
                 <div class="header">
                     <%= image_tag(post.thumbnail, :class => "thumbnail") if post.thumbnail != "" %>
                     <div class="subject">
-                        <h3><%= link_to_if post.href != "", post.title, post.href %></h3>
+                        <h3><%= link_to_if post.href != "", post.title, post.href, target: "_blank" %></h3>
                         <p class="kind"><%= post.kind %></p>
                         <p class="languages"><%= "(" + post.languages + ")" if post.languages != "" %></p>
                     </div>
