@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'feed/feed'
+
   get 'comments/index'
 
   get 'comments/new'
@@ -7,9 +9,11 @@ Rails.application.routes.draw do
 
   get 'comments/show'
 
+  get "/" => "feed#show"
+
   get "/comments" => "comments#show"
 
-  get "/" => "home#show"
+  get "/terminal" => "home#show"
 
   get "/:page" => "home#show"
 

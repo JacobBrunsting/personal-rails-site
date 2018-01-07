@@ -1,0 +1,40 @@
+[
+    {
+        "thumbnail": "yahoo-logo.png",
+        "title": "Yahoo",
+        "kind": "Internship",
+        "date": "September - December 2017",
+        "href": "https://www.yahoo.com/",
+        "image": "",
+        "text": [
+            "Worked on a team of full time developers and interns creating a system to track usage of internal services.",
+            "Developed the core project with Go, integrating with legacy systems using Node.js.",
+            "Configured the production SQL database and wrote all database queries for the project.",
+            "Setup behavioral testing using Python."
+        ]
+    },
+    {
+        "thumbnail": "tribalscale-logo.png",
+        "title": "TribalScale",
+        "kind": "Internship",
+        "date": "January - April 2017",
+        "href": "http://www.tribalscale.com",
+        "image": "github-logo.png",
+        "text": [
+            "Pair programmed with experienced developers, working in Java and JavaScript (Node.js + React)",
+            "Worked on projects for various clients, including and Android app and a companies new website.",
+            "Added features to an Android app for a startup, including a video messaging feature",
+            "Worked with developers at TribalScale and the client company when developing a new website for a large client",
+            "Added new content, a home page animation, and integration with a CMS to the TribalScale website"
+        ]
+    },
+    {
+        "thumbnail": "rave-logo.png",
+        "title": "Rave",
+        "kind": "Internship",
+        "date": "May - August 2016",
+        "href": "https://www.rave.io",
+        "image": "github-logo.png",
+        "text": []
+    }
+]

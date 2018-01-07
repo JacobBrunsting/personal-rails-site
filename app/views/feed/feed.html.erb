@@ -1,0 +1,36 @@
+<div id="content">
+    <div id="header">
+        <%= image_tag("profile.jpg", :alt => "Profile Image", :class => "profile") %>
+        <h1>Jacob Brunsting</h1>
+        <a href="https://www.linkedin.com/in/jacob-brunsting-021a25126/">
+            <%= image_tag("linkedin-logo.png", :alt => "LinkedIn") %>
+        </a>
+        <a href="https://github.com/JacobBrunsting">
+            <%= image_tag("github-logo.png", :alt => "LinkedIn") %>
+        </a>
+    </div>
+    <ul id="feed">
+        <% @posts.each_with_index do |post, i| %>
+            <li class="post">
+                <input id=<%= "expand-" + i.to_s %> type="checkbox" class="toggle-post" unchecked>
+                <div class="header">
+                    <%= image_tag(post.thumbnail, :class => "thumbnail") %>
+                    <div class="subject">
+                        <h3><%= link_to_if post.href != "", post.title, post.href %></h3>
+                        <p class="kind"><%= post.kind%></p>
+                    </div>
+                    <p class="date"><%= post.date %></p>
+                </div>
+                <div class="body">
+                    <%= image_tag(post.image, :class => "hero") if post.image != "" %>
+                    <% post.text.each do |text| %>
+                        <%= content_tag(:p, text, :class => "content") if text != "" %>
+                    <% end %>
+                </div>
+                <label for=<%= "expand-" + i.to_s%>>
+                    <div class="toggle-post-button"/>
+                </label>
+            </li>
+        <% end %>
+    </ul>
+</div>
