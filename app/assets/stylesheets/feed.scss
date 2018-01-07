@@ -1,12 +1,23 @@
-$primary_dark: #090E3B;
-$primary_medium: #313975;
-$primary_light: #F4F5FC;
+$primary_dark: #509674;
+$primary_medium: #F6FAF8;
+$primary_light: #FFFFFF;
 $text_light: #D0D0D0;
 $text_dark: #151515;
 $text_select: #FFE7AA;
+$text_link: #546790;
+$text_link_visited: #665794;
+
+a {
+    text-decoration: none;
+    color: $text_link;
+}
+
+a:visited {
+    color: $text_link_visited;
+}
 
 #content {
-    background-color: $primary_dark;
+    background-color: $primary_medium;
     min-height: 100vh;
     z-index: -1;
     font-family: 'Roboto', sans-serif;
@@ -23,14 +34,13 @@ $text_select: #FFE7AA;
     left: 0;
     right: 0;
     height: 40px;
-    background-color: $primary_medium;
+    background-color: $primary_dark;
     color: $text_light;
     text-align: left;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 8px;
-    box-shadow: 0 1px 6px 0 $primary_dark;
 
     img.profile {
         border: #FFF;
@@ -59,9 +69,7 @@ $text_select: #FFE7AA;
 }
 
 #feed {
-    background-color: $primary_dark;
-    position: relative;
-    top: 60px;
+    background-color: $primary_medium;
     margin: 0;
     padding: 8px;
     list-style: none;
@@ -77,7 +85,7 @@ $text_select: #FFE7AA;
     margin-right: auto;
     border-radius: 2px;
     color: $text_dark;
-    box-shadow: 0 0px 6px 2px black;
+    box-shadow: 0 0 3px 0 $primary_dark;
 
     input.toggle-post {
         display: none;
@@ -92,7 +100,7 @@ $text_select: #FFE7AA;
 
     .toggle-post-button:after {
         content: "▼";
-        color: $primary_medium;
+        color: $primary_dark;
     }
 
     .toggle-post:checked ~ label > .toggle-post-button:after {
@@ -105,20 +113,16 @@ $text_select: #FFE7AA;
         align-items: flex-start;
     }
 
-    a {
-        text-decoration: none;
-    }
-
     .thumbnail {
         border: #FFF;
         border-width: 1px;
         border-style: solid;
         border-radius: 1px;
         height: 48px;
+        margin-right: 8px;
     }
 
     .subject {
-        margin-left: 8px;
         margin-right: auto;
 
         h3 {
@@ -128,9 +132,21 @@ $text_select: #FFE7AA;
         }
 
         .kind {
+            float: left;
+            display: inline-block;
+            font-weight: bold;
             text-align: left;
             font-size: 1em;
             margin: 0;
+        }
+
+        .languages {
+            float: left;
+            display: inline-block;
+            text-align: left;
+            font-size: 0.9em;
+            margin: 0;
+            margin-left: 8px;
         }
     }
 
@@ -169,5 +185,17 @@ $text_select: #FFE7AA;
     input.toggle-post:checked ~ .body {
         max-height: 800px;
         display: block;
+    }
+}
+
+.about {
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+    margin-top: 0;
+    color: $text_dark;
+
+    h3 {
+        margin: 0;
+        font-size: 1.5em;
     }
 }

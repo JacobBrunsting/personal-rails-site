@@ -9,15 +9,30 @@
             <%= image_tag("github-logo.png", :alt => "LinkedIn") %>
         </a>
     </div>
+    <div class="header">
+        <%= image_tag(@about.thumbnail, :class => "thumbnail") %>
+        <div class="subject">
+            <h3><%= @about.title %></h3>
+        </div>
+    </div>
+    <div class="post about">
+        <h3><%= @about.title %></h3>
+        <div class="body">
+            <% @about.text.each do |text| %>
+                <%= content_tag(:p, text, :class => "content") if text != "" %>
+            <% end %>
+        </div>
+    </div>
     <ul id="feed">
         <% @posts.each_with_index do |post, i| %>
             <li class="post">
                 <input id=<%= "expand-" + i.to_s %> type="checkbox" class="toggle-post" unchecked>
                 <div class="header">
-                    <%= image_tag(post.thumbnail, :class => "thumbnail") %>
+                    <%= image_tag(post.thumbnail, :class => "thumbnail") if post.thumbnail != "" %>
                     <div class="subject">
                         <h3><%= link_to_if post.href != "", post.title, post.href %></h3>
-                        <p class="kind"><%= post.kind%></p>
+                        <p class="kind"><%= post.kind %></p>
+                        <p class="languages"><%= "(" + post.languages + ")" if post.languages != "" %></p>
                     </div>
                     <p class="date"><%= post.date %></p>
                 </div>

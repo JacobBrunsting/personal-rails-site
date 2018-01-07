@@ -1,11 +1,37 @@
 [
     {
+        "thumbnail": "",
+        "title": "Personal Website",
+        "kind": "Web Project",
+        "languages": "Ruby on Rails",
+        "date": "December 2017",
+        "href": "http://jacobbrunsting.ca",
+        "image": "",
+        "text": [
+            "Wrote this website using Ruby on Rails"
+        ]
+    },
+    {
+        "thumbnail": "iced-mocha-icon.ico",
+        "title": "Iced Mocha",
+        "kind": "Web Project",
+        "languages": "Go, Haskell, SQL, Node.js, React",
+        "date": "November 2017",
+        "href": "https://www.iced-mocha.com",
+        "image": "",
+        "text": [
+            "Collaborated with a peer to create iced-mocha.com, a website that allows you to aggregate RSS and social media feeds.",
+            "Written using Go, SQL, Haskell, Node.js, and React, and deployed with Docker Swarm."
+        ]
+    },
+    {
         "thumbnail": "yahoo-logo.png",
         "title": "Yahoo",
         "kind": "Internship",
+        "languages": "Go, SQL, Node.js, Python",
         "date": "September - December 2017",
         "href": "https://www.yahoo.com/",
-        "image": "",
+        "image": "yahoo-campus.jpg",
         "text": [
             "Worked on a team of full time developers and interns creating a system to track usage of internal services.",
             "Developed the core project with Go, integrating with legacy systems using Node.js.",
@@ -14,27 +40,104 @@
         ]
     },
     {
+        "thumbnail": "blankbook-icon.webp",
+        "title": "BlankBook",
+        "kind": "Android Project",
+        "languages": "Java, Go, SQL",
+        "date": "June 2017",
+        "href": "https://play.google.com/store/apps/details?id=com.jacob.blankbookandroidclient&hl=en",
+        "image": "",
+        "text": [
+            "Created an Android app that allows you to create and post to chat groups anonymously.",
+            "Wrote the backend in Go and SQL, deployed using Docker Swarm on Amazon EC2."
+        ]
+    },
+    {
+        "thumbnail": "",
+        "title": "OpenWindow",
+        "kind": "Web Project",
+        "languages": "MongoDB, Express.js, Angular.js, Node.js",
+        "date": "February 2017",
+        "href": "https://github.com/JacobBrunsting/openwindow",
+        "image": "",
+        "text": [
+            "Used the MEAN stack to write a distributed location-based site allowing you to create and view posts from your region with automatic backup and failover."
+        ]
+    },
+    {
         "thumbnail": "tribalscale-logo.png",
         "title": "TribalScale",
         "kind": "Internship",
+        "languages": "Java, React, Node.js",
         "date": "January - April 2017",
         "href": "http://www.tribalscale.com",
-        "image": "github-logo.png",
+        "image": "",
         "text": [
-            "Pair programmed with experienced developers, working in Java and JavaScript (Node.js + React)",
+            "Pair programmed with experienced developers, working in Java and JavaScript (Node.js + React).",
             "Worked on projects for various clients, including and Android app and a companies new website.",
-            "Added features to an Android app for a startup, including a video messaging feature",
-            "Worked with developers at TribalScale and the client company when developing a new website for a large client",
-            "Added new content, a home page animation, and integration with a CMS to the TribalScale website"
+            "Added features to an Android app for a startup, including a video messaging feature.",
+            "Worked with developers at TribalScale and the client company when developing a new website for a large client.",
+            "Added new content, a home page animation, and integration with a CMS to the TribalScale website."
+        ]
+    },
+    {
+        "thumbnail": "",
+        "title": "Crossword Solver",
+        "kind": "Python Project",
+        "languages": "",
+        "date": "September 2016",
+        "href": "https://github.com/JacobBrunsting/crossword-solver/commits/master",
+        "image": "",
+        "text": [
+            "Created a Python program to produce all possible crossword puzzle solutions based on a word bank."
+        ]
+    },
+    {
+        "thumbnail": "",
+        "title": "Mastermind Solver",
+        "kind": "C Project",
+        "languages": "",
+        "date": "August 2016",
+        "href": "https://github.com/JacobBrunsting/crossword-solver/commits/master",
+        "image": "",
+        "text": [
+            "Made a C program to break codes using the rules of the Mastermind game."
+        ]
+    },
+    {
+        "thumbnail": "portable-planner-icon.webp",
+        "title": "Portable Planner",
+        "kind": "Android Project",
+        "languages": "",
+        "date": "July 2016",
+        "href": "https://play.google.com/store/apps/details?id=com.myplanner.myplanner&hl=en",
+        "image": "",
+        "text": [
+            "Wrote an Android that allows you to write notes and create reminders for your classes."
         ]
     },
     {
         "thumbnail": "rave-logo.png",
         "title": "Rave",
         "kind": "Internship",
+        "languages": "Java",
         "date": "May - August 2016",
-        "href": "https://www.rave.io",
-        "image": "github-logo.png",
-        "text": []
+        "href": "https://play.google.com/store/apps/details?id=com.brunsting.jacob.mymathquiz",
+        "image": "",
+        "text": [
+            "Developed the Rave video/chat app for Android."
+        ]
+    },
+    {
+        "thumbnail": "my-math-class-icon.webp",
+        "title": "My Math Class",
+        "kind": "Android Project",
+        "languages": "",
+        "date": "January 2016",
+        "href": "https://play.google.com/store/apps/details?id=com.brunsting.jacob.mymathquiz&hl=en",
+        "image": "",
+        "text": [
+            "Wrote a simple Android app to generate math quizzes at various difficulties."
+        ]
     }
 ]
